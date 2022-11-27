@@ -111,7 +111,7 @@ padding: 10px;
     <form id="form-cliente3">
         <textarea placeholder="Digite a vaga que procura..." name="comprovante6"></textarea><br>
         <input type="file" name="arquivo3" /><br>
-        <input type="submit" name="acao3" value="Enviar" />
+        <input type="submit" name="acao6" value="Enviar" />
         
     </form>
     <br>    
@@ -128,9 +128,9 @@ padding: 10px;
 
     <h2>Cadastrar Caixa de Som</h2>
     <form id="form-cliente">
-        <textarea placeholder="Digite a vaga que procura..." name="comprovante"></textarea><br>
-        <input type="file" name="arquivo" /><br>
-        <input type="submit" name="acao" value="Enviar" />
+        <textarea placeholder="Digite a vaga que procura..." name="comprovante1"></textarea><br>
+        <input type="file" name="arquivo1" /><br>
+        <input type="submit" name="acao1" value="Enviar" />
         
     </form>
     <br>
@@ -162,7 +162,7 @@ padding: 10px;
         <form id="form-Titulo3">
             <textarea placeholder="Digite a vaga que procura..." name="comprovante5"></textarea><br>
             <br>
-            <input type="submit" name="acao4" value="Enviar" />
+            <input type="submit" name="acao5" value="Enviar" />
             
         </form>
     <br>
@@ -210,8 +210,8 @@ padding: 10px;
         const formCliente = document.querySelector('#form-cliente');
         formCliente.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante]').value;
-            let arquivo = document.querySelector('[name=arquivo]').files[0];
+            let comprovanteText = document.querySelector('[name=comprovante1]').value;
+            let arquivo = document.querySelector('[name=arquivo1]').files[0];
 
             const uploadTask = storage.ref('caixa/' + arquivo.name).put(arquivo);
 
@@ -228,7 +228,7 @@ padding: 10px;
                             descricao: comprovanteText,
                             arquivoURL: url
                         })
-                        alert("Formulário Enviado com sucesso!");
+                        alert("Cadastro Enviado com sucesso!");
                     })
                 }
             )
@@ -258,7 +258,7 @@ padding: 10px;
                             descricao: comprovanteText,
                             arquivoURL: url
                         })
-                        alert("Formulário Enviado com sucesso!");
+                        alert("Cadastro Enviado com sucesso!");
                     })
                 }
             )
@@ -277,17 +277,17 @@ padding: 10px;
             let comprovanteText = document.querySelector('[name=comprovante6]').value;
             let arquivo = document.querySelector('[name=arquivo3]').files[0];
 
-            const uploadTask0 = storage.ref('variedades/' + arquivo.name).put(arquivo);
+            const uploadTask1 = storage.ref('variedades/' + arquivo.name).put(arquivo);
 
-            uploadTask0.on('state_changed', (snapshot) => {
-                const progress0 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+            uploadTask1.on('state_changed', (snapshot) => {
+                const progress1 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
                 console.log(progress0);
             },
                 function (error) {
 
                 },
                 function () {
-                    storage.ref('carregador/' + arquivo.name).getDownloadURL().then((url) => {
+                    storage.ref('variedades/' + arquivo.name).getDownloadURL().then((url) => {
                         db.collection('variedades').add({
                             descricao: comprovanteText,
                             arquivoURL: url
