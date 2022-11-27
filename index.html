@@ -135,6 +135,16 @@ padding: 10px;
     </form>
     <br>
 
+
+<h2>Cadastrar Fone via Bluetooth</h2>
+    <form id="form-cliente4">
+        <textarea placeholder="Digite a vaga que procura..." name="comprovante7"></textarea><br>
+        <input type="file" name="arquivo4" /><br>
+        <input type="submit" name="acao7" value="Enviar" />
+        
+    </form>
+    <br>
+
     <h2>Cadastrar Titulo 1</h2>
 
         <form id="form-Titulo1">
@@ -163,6 +173,17 @@ padding: 10px;
             <textarea placeholder="Digite a vaga que procura..." name="comprovante5"></textarea><br>
             <br>
             <input type="submit" name="acao5" value="Enviar" />
+            
+        </form>
+    <br>
+
+
+<h2>Cadastrar Titulo 4</h2>
+
+        <form id="form-Titulo4">
+            <textarea placeholder="Digite a vaga que procura..." name="comprovante7"></textarea><br>
+            <br>
+            <input type="submit" name="acao6" value="Enviar" />
             
         </form>
     <br>
@@ -301,6 +322,40 @@ padding: 10px;
 /****************************************************************************/
 
 
+
+
+/***************************************************************************/
+
+        const formCliente4 = document.querySelector('#form-cliente4');
+        formCliente4.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let comprovanteText = document.querySelector('[name=comprovante7]').value;
+            let arquivo = document.querySelector('[name=arquivo4]').files[0];
+
+            const uploadTask2 = storage.ref('fone/' + arquivo.name).put(arquivo);
+
+            uploadTask2.on('state_changed', (snapshot) => {
+                const progress2 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress2);
+            },
+                function (error) {
+
+                },
+                function () {
+                    storage.ref('fone/' + arquivo.name).getDownloadURL().then((url) => {
+                        db.collection('fone').add({
+                            descricao: comprovanteText,
+                            arquivoURL: url
+                        })
+                        alert("Cadastro Enviado com sucesso!");
+                    })
+                }
+            )
+        })
+
+/****************************************************************************/
+
+
 /***************************************************************************/
 
         const formTitulo1 = document.querySelector('#form-Titulo1');
@@ -389,6 +444,38 @@ padding: 10px;
                            
                         })
                         alert("Titulo3 Cadastrado!");
+                    })
+                }
+            )
+        })
+
+/****************************************************************************/
+
+
+
+
+        const formTitulo4 = document.querySelector('#form-Titulo4');
+        formTitulo4.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let comprovanteText = document.querySelector('[name=comprovante7]').value;
+           
+
+            const uploadTask3 = storage.ref('titulo4/' + name).put(name);
+
+            uploadTask3.on('state_changed', (snapshot) => {
+                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress3);
+            },
+                function (error) {
+
+                },
+                function () {
+                    storage.ref('titulo4/' + name).getDownloadURL().then((url) => {
+                        db.collection('titulo4').add({
+                            descricao: comprovanteText,
+                           
+                        })
+                        alert("Titulo4 Cadastrado!");
                     })
                 }
             )
