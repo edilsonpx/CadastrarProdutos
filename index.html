@@ -228,17 +228,17 @@ padding: 10px;
 
         const provider = new firebase.auth.GoogleAuthProvider();
 
-        const formCliente = document.querySelector('#form-cliente');
-        formCliente.addEventListener('submit', (e) => {
+        const formCliente2 = document.querySelector('#form-cliente2');
+        formCliente2.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante1]').value;
-            let arquivo = document.querySelector('[name=arquivo1]').files[0];
+            let comprovanteText = document.querySelector('[name=comprovante2]').value;
+            let arquivo = document.querySelector('[name=arquivo2]').files[0];
 
-            const uploadTask = storage.ref('caixa/' + arquivo.name).put(arquivo);
+            const uploadTask2 = storage.ref('caixa/' + arquivo.name).put(arquivo);
 
-            uploadTask.on('state_changed', (snapshot) => {
-                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress);
+            uploadTask2.on('state_changed', (snapshot) => {
+                const progress2 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress2);
             },
                 function (error) {
 
@@ -258,17 +258,17 @@ padding: 10px;
 
 /***************************************************************************/
 
-        const formCliente2 = document.querySelector('#form-cliente2');
-        formCliente2.addEventListener('submit', (e) => {
+        const formCliente3 = document.querySelector('#form-cliente3');
+        formCliente3.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante2]').value;
-            let arquivo = document.querySelector('[name=arquivo2]').files[0];
+            let comprovanteText = document.querySelector('[name=comprovante3]').value;
+            let arquivo = document.querySelector('[name=arquivo3]').files[0];
 
-            const uploadTask0 = storage.ref('carregador/' + arquivo.name).put(arquivo);
+            const uploadTask3 = storage.ref('carregador/' + arquivo.name).put(arquivo);
 
-            uploadTask0.on('state_changed', (snapshot) => {
-                const progress0 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress0);
+            uploadTask3.on('state_changed', (snapshot) => {
+                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress3);
             },
                 function (error) {
 
@@ -292,11 +292,11 @@ padding: 10px;
 
 /***************************************************************************/
 
-        const formCliente3 = document.querySelector('#form-cliente3');
-        formCliente3.addEventListener('submit', (e) => {
+        const formCliente1 = document.querySelector('#form-cliente1');
+        formCliente1.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante6]').value;
-            let arquivo = document.querySelector('[name=arquivo3]').files[0];
+            let comprovanteText = document.querySelector('[name=comprovante1]').value;
+            let arquivo = document.querySelector('[name=arquivo1]').files[0];
 
             const uploadTask1 = storage.ref('variedades/' + arquivo.name).put(arquivo);
 
@@ -329,14 +329,14 @@ padding: 10px;
         const formCliente4 = document.querySelector('#form-cliente4');
         formCliente4.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante7]').value;
+            let comprovanteText = document.querySelector('[name=comprovante4]').value;
             let arquivo = document.querySelector('[name=arquivo4]').files[0];
 
-            const uploadTask2 = storage.ref('fone/' + arquivo.name).put(arquivo);
+            const uploadTask4 = storage.ref('fone/' + arquivo.name).put(arquivo);
 
-            uploadTask2.on('state_changed', (snapshot) => {
-                const progress2 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress2);
+            uploadTask4.on('state_changed', (snapshot) => {
+                const progress4 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress4);
             },
                 function (error) {
 
@@ -358,17 +358,17 @@ padding: 10px;
 
 /***************************************************************************/
 
-        const formTitulo1 = document.querySelector('#form-Titulo1');
-        formTitulo1.addEventListener('submit', (e) => {
+        const formTitulo5 = document.querySelector('#form-Titulo5');
+        formTitulo5.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante3]').value;
+            let comprovanteText = document.querySelector('[name=comprovante5]').value;
            
 
-            const uploadTask3 = storage.ref('titulo1/' + name).put(name);
+            const uploadTask5 = storage.ref('titulo1/' + name).put(name);
 
-            uploadTask3.on('state_changed', (snapshot) => {
-                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress3);
+            uploadTask5.on('state_changed', (snapshot) => {
+                const progress5 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress5);
             },
                 function (error) {
 
@@ -389,17 +389,17 @@ padding: 10px;
 
 /***************************************************************************/
 
-        const formTitulo2 = document.querySelector('#form-Titulo2');
-        formTitulo2.addEventListener('submit', (e) => {
+        const formTitulo6 = document.querySelector('#form-Titulo6');
+        formTitulo6.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante4]').value;
+            let comprovanteText = document.querySelector('[name=comprovante6]').value;
            
 
-            const uploadTask3 = storage.ref('titulo2/' + name).put(name);
+            const uploadTask6 = storage.ref('titulo2/' + name).put(name);
 
-            uploadTask3.on('state_changed', (snapshot) => {
-                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress3);
+            uploadTask6.on('state_changed', (snapshot) => {
+                const progress6 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress6);
             },
                 function (error) {
 
@@ -422,17 +422,17 @@ padding: 10px;
 
    /***************************************************************************/
 
-        const formTitulo3 = document.querySelector('#form-Titulo3');
-        formTitulo3.addEventListener('submit', (e) => {
+        const formTitulo7 = document.querySelector('#form-Titulo7');
+        formTitulo7.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante5]').value;
+            let comprovanteText = document.querySelector('[name=comprovante7]').value;
            
 
-            const uploadTask3 = storage.ref('titulo3/' + name).put(name);
+            const uploadTask7 = storage.ref('titulo3/' + name).put(name);
 
-            uploadTask3.on('state_changed', (snapshot) => {
-                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress3);
+            uploadTask7.on('state_changed', (snapshot) => {
+                const progress7 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress7);
             },
                 function (error) {
 
@@ -454,17 +454,17 @@ padding: 10px;
 
 
 
-        const formTitulo4 = document.querySelector('#form-Titulo4');
-        formTitulo4.addEventListener('submit', (e) => {
+        const formTitulo8 = document.querySelector('#form-Titulo8');
+        formTitulo8.addEventListener('submit', (e) => {
             e.preventDefault();
             let comprovanteText = document.querySelector('[name=comprovante8]').value;
            
 
-            const uploadTask3 = storage.ref('titulo4/' + name).put(name);
+            const uploadTask8 = storage.ref('titulo4/' + name).put(name);
 
-            uploadTask3.on('state_changed', (snapshot) => {
-                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
-                console.log(progress3);
+            uploadTask8.on('state_changed', (snapshot) => {
+                const progress8 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress8);
             },
                 function (error) {
 
