@@ -267,6 +267,40 @@ padding: 10px;
 /****************************************************************************/
 
 
+
+
+/***************************************************************************/
+
+        const formCliente3 = document.querySelector('#form-cliente3');
+        formCliente3.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let comprovanteText = document.querySelector('[name=comprovante6]').value;
+            let arquivo = document.querySelector('[name=arquivo3]').files[0];
+
+            const uploadTask0 = storage.ref('variedades/' + arquivo.name).put(arquivo);
+
+            uploadTask0.on('state_changed', (snapshot) => {
+                const progress0 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress0);
+            },
+                function (error) {
+
+                },
+                function () {
+                    storage.ref('carregador/' + arquivo.name).getDownloadURL().then((url) => {
+                        db.collection('variedades').add({
+                            descricao: comprovanteText,
+                            arquivoURL: url
+                        })
+                        alert("Cadastro Enviado com sucesso!");
+                    })
+                }
+            )
+        })
+
+/****************************************************************************/
+
+
 /***************************************************************************/
 
         const formTitulo1 = document.querySelector('#form-Titulo1');
