@@ -104,7 +104,17 @@ padding: 10px;
 
 <body>
     <div style="display: none" class="cliente">
-       
+   
+
+
+         <h2>Cadastrar Variedades</h2>
+    <form id="form-cliente3">
+        <textarea placeholder="Digite a vaga que procura..." name="comprovante6"></textarea><br>
+        <input type="file" name="arquivo3" /><br>
+        <input type="submit" name="acao3" value="Enviar" />
+        
+    </form>
+    <br>    
 
         <h2>Cadastrar Carregador</h2>
 
@@ -144,6 +154,21 @@ padding: 10px;
             
         </form>
     <br>
+
+
+
+<h2>Cadastrar Titulo 3</h2>
+
+        <form id="form-Titulo3">
+            <textarea placeholder="Digite a vaga que procura..." name="comprovante5"></textarea><br>
+            <br>
+            <input type="submit" name="acao4" value="Enviar" />
+            
+        </form>
+    <br>
+
+
+
 </div>
     <!--CLIENTE-->
 
@@ -297,6 +322,39 @@ padding: 10px;
                            
                         })
                         alert("Titulo2 Cadastrado!");
+                    })
+                }
+            )
+        })
+
+/****************************************************************************/
+
+
+
+   /***************************************************************************/
+
+        const formTitulo3 = document.querySelector('#form-Titulo3');
+        formTitulo3.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let comprovanteText = document.querySelector('[name=comprovante5]').value;
+           
+
+            const uploadTask3 = storage.ref('titulo3/' + name).put(name);
+
+            uploadTask3.on('state_changed', (snapshot) => {
+                const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress3);
+            },
+                function (error) {
+
+                },
+                function () {
+                    storage.ref('titulo3/' + name).getDownloadURL().then((url) => {
+                        db.collection('titulo3').add({
+                            descricao: comprovanteText,
+                           
+                        })
+                        alert("Titulo3 Cadastrado!");
                     })
                 }
             )
