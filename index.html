@@ -181,9 +181,9 @@ padding: 10px;
 <h2>Cadastrar Titulo 4</h2>
 
         <form id="form-Titulo4">
-            <textarea placeholder="Digite a vaga que procura..." name="comprovante7"></textarea><br>
+            <textarea placeholder="Digite a vaga que procura..." name="comprovante8"></textarea><br>
             <br>
-            <input type="submit" name="acao6" value="Enviar" />
+            <input type="submit" name="acao8" value="Enviar" />
             
         </form>
     <br>
@@ -457,7 +457,7 @@ padding: 10px;
         const formTitulo4 = document.querySelector('#form-Titulo4');
         formTitulo4.addEventListener('submit', (e) => {
             e.preventDefault();
-            let comprovanteText = document.querySelector('[name=comprovante7]').value;
+            let comprovanteText = document.querySelector('[name=comprovante8]').value;
            
 
             const uploadTask3 = storage.ref('titulo4/' + name).put(name);
