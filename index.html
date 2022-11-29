@@ -252,6 +252,39 @@ padding: 10px;
 /***********************************************************************************/
 
 
+        const formCliente1 = document.querySelector('#form-cliente1');
+        formCliente1.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let comprovanteText = document.querySelector('[name=comprovante1]').value;
+            let arquivo = document.querySelector('[name=arquivo1]').files[0];
+
+            const uploadTask1 = storage.ref('variedades/' + arquivo.name).put(arquivo);
+
+            uploadTask1.on('state_changed', (snapshot) => {
+                const progress1 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
+                console.log(progress2);
+            },
+                function (error) {
+
+                },
+                function () {
+                    storage.ref('variedades/' + arquivo.name).getDownloadURL().then((url) => {
+                        db.collection('variedades').add({
+                            descricao: comprovanteText,
+                            arquivoURL: url
+                        })
+                        alert("Cadastro Enviado com sucesso!");
+                    })
+                }
+            )
+        })
+
+
+
+
+/***********************************************************************************/
+
+
         const formCliente2 = document.querySelector('#form-cliente2');
         formCliente2.addEventListener('submit', (e) => {
             e.preventDefault();
