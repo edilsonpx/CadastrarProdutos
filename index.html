@@ -269,7 +269,7 @@ padding: 10px;
                 },
                 function () {
                     storage.ref('caixa/' + arquivo.name).getDownloadURL().then((url) => {
-                        db.collection('Carregador').add({
+                        db.collection('caixa').add({
                             descricao: comprovanteText,
                             arquivoURL: url
                         })
@@ -299,7 +299,7 @@ padding: 10px;
                 },
                 function () {
                     storage.ref('caixa/' + arquivo.name).getDownloadURL().then((url) => {
-                        db.collection('carregador').add({
+                        db.collection('caixa').add({
                             descricao: comprovanteText,
                             arquivoURL: url
                         })
