@@ -258,7 +258,7 @@ padding: 10px;
             let comprovanteText = document.querySelector('[name=comprovante2]').value;
             let arquivo = document.querySelector('[name=arquivo2]').files[0];
 
-            const uploadTask2 = storage.ref('caixa/' + arquivo.name).put(arquivo);
+            const uploadTask2 = storage.ref('Carregador/' + arquivo.name).put(arquivo);
 
             uploadTask2.on('state_changed', (snapshot) => {
                 const progress2 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
@@ -269,7 +269,7 @@ padding: 10px;
                 },
                 function () {
                     storage.ref('caixa/' + arquivo.name).getDownloadURL().then((url) => {
-                        db.collection('caixa').add({
+                        db.collection('Carregador').add({
                             descricao: comprovanteText,
                             arquivoURL: url
                         })
@@ -288,7 +288,7 @@ padding: 10px;
             let comprovanteText = document.querySelector('[name=comprovante3]').value;
             let arquivo = document.querySelector('[name=arquivo3]').files[0];
 
-            const uploadTask3 = storage.ref('carregador/' + arquivo.name).put(arquivo);
+            const uploadTask3 = storage.ref('caixa/' + arquivo.name).put(arquivo);
 
             uploadTask3.on('state_changed', (snapshot) => {
                 const progress3 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
@@ -298,7 +298,7 @@ padding: 10px;
 
                 },
                 function () {
-                    storage.ref('carregador/' + arquivo.name).getDownloadURL().then((url) => {
+                    storage.ref('caixa/' + arquivo.name).getDownloadURL().then((url) => {
                         db.collection('carregador').add({
                             descricao: comprovanteText,
                             arquivoURL: url
