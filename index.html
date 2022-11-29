@@ -291,7 +291,7 @@ padding: 10px;
             let comprovanteText = document.querySelector('[name=comprovante2]').value;
             let arquivo = document.querySelector('[name=arquivo2]').files[0];
 
-            const uploadTask2 = storage.ref('Carregador/' + arquivo.name).put(arquivo);
+            const uploadTask2 = storage.ref('carregador/' + arquivo.name).put(arquivo);
 
             uploadTask2.on('state_changed', (snapshot) => {
                 const progress2 = (snapshot.bytesTransferred / snapshot.totalBytes) * 1;
@@ -301,8 +301,8 @@ padding: 10px;
 
                 },
                 function () {
-                    storage.ref('Carregador/' + arquivo.name).getDownloadURL().then((url) => {
-                        db.collection('Carregador').add({
+                    storage.ref('carregador/' + arquivo.name).getDownloadURL().then((url) => {
+                        db.collection('carregador').add({
                             descricao: comprovanteText,
                             arquivoURL: url
                         })
