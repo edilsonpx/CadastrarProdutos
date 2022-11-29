@@ -268,7 +268,7 @@ padding: 10px;
 
                 },
                 function () {
-                    storage.ref('caixa/' + arquivo.name).getDownloadURL().then((url) => {
+                    storage.ref('Carregador/' + arquivo.name).getDownloadURL().then((url) => {
                         db.collection('caixa').add({
                             descricao: comprovanteText,
                             arquivoURL: url
